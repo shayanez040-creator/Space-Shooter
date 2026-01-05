@@ -173,11 +173,19 @@ public class SpaceShooterGame extends ApplicationAdapter {
             enemy.y -= 150 * delta;
         }
 
+        // Remove enemies that reach bottom (enemy missed)
         for (int i = enemies.size - 1; i >= 0; i--) {
             if (enemies.get(i).y + enemies.get(i).height < 0) {
+
                 enemies.removeIndex(i);
+                health--; // reduce player life
+
+                if (health <= 0) {
+                    gameState = GameState.GAME_OVER;
+                }
             }
         }
+
 
         // Player ↔ Enemy collision
         for (int i = enemies.size - 1; i >= 0; i--) {
