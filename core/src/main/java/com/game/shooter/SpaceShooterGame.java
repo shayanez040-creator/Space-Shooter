@@ -75,9 +75,8 @@ public class SpaceShooterGame extends ApplicationAdapter {
     @Override
     public void render() {
 
-        // ======================
         // MENU SCREEN
-        // ======================
+
         if (gameState == GameState.MENU) {
             Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
             batch.begin();
@@ -91,9 +90,9 @@ public class SpaceShooterGame extends ApplicationAdapter {
             return;
         }
 
-        // ======================
+
         // GAME OVER SCREEN
-        // ======================
+
         if (gameState == GameState.GAME_OVER) {
             Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
             batch.begin();
@@ -116,9 +115,8 @@ public class SpaceShooterGame extends ApplicationAdapter {
             return;
         }
 
-        // ======================
         // GAME PLAYING
-        // ======================
+
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         float delta = Gdx.graphics.getDeltaTime();
 
